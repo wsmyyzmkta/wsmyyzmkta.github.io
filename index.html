@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,6 +146,87 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/03/%E5%AE%89%E8%A3%85React/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="开星">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开星的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 开星的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/03/%E5%AE%89%E8%A3%85React/" class="post-title-link" itemprop="url">安装React的开发环境</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-03 00:00:00 / 修改时间：21:41:39" itemprop="dateCreated datePublished" datetime="2022-06-03T00:00:00+08:00">2022-06-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用create-react-app构建React开发环境"><a href="#使用create-react-app构建React开发环境" class="headerlink" title="使用create-react-app构建React开发环境"></a>使用create-react-app构建React开发环境</h1><p>在桌面新建文件夹(随便位置)在文件夹呼出cmd输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app 输入你想要的文件名字</span><br></pre></td></tr></table></figure>
+<img src="/2022/06/03/%E5%AE%89%E8%A3%85React/one.png" class="">
+<p>然后文件会出现&#x2F;输入你想要的文件名字&#x2F;里面就是React的开发环境了</p>
+<img src="/2022/06/03/%E5%AE%89%E8%A3%85React/two.png" class="">
+<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><p>React在地开启http服务器（日后补齐）<br>在react开发环境路径cmd<br>输入npm start<br>这样react会在系统默认浏览器生启react本地http服务器供实时刷新</p>
+<img src="/2022/06/03/%E5%AE%89%E8%A3%85React/tree.png" class="">
+<p>生启react本地http服务器图片如下</p>
+<img src="/2022/06/03/%E5%AE%89%E8%A3%85React/four.png" class="">
+<h2 id="React的文件"><a href="#React的文件" class="headerlink" title="React的文件"></a>React的文件</h2><p>看<strong>public</strong>和<strong>rsc</strong>的文件就完事了<br><strong>public&#x2F;index.html 是启动http服务器的首页</strong><br>public其他可以删除了<br><strong>src&#x2F;index.js是编译的入口文件,只能叫index这个名字</strong><br>src其他可以删除了<br>用编译器进入src&#x2F;index.js删除所有代码<br>然后这样写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;;//react 是react核心库，只要使用react就必须要引入</span><br><span class="line">import ReactDOM from &#x27;react-dom/client&#x27;;//react-dom 是react的dom包，使用react开发web应用时必须引入</span><br><span class="line">function fn()&#123;return&#x27;hello world&#x27;&#125;</span><br><span class="line">const root = ReactDOM.createRoot(document.getElementById(&#x27;root&#x27;));</span><br><span class="line">root.render(//React把jsx渲染到root根节点public&gt;index.html,打开此文件发现一个id为root的根节点</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;/* 这是jsx的注释，ctrl+/ */&#125;</span><br><span class="line">    &#123;/* 在JSX中可以直接通过 &#123;&#125; 来嵌入 JS表达式，表达式是有返回值的语句。变量 函数。。。if for就不行</span><br><span class="line">    但是他们里面可以写jsx */&#125;</span><br><span class="line">    hello world</span><br><span class="line">    &lt;div&gt;&#123;fn()&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>React本地http服务器就会输出hello world<br><strong>manifest.json 指定了开始页面index.html，一切的开始都从这里开始，所以这个是代码执行的源头。</strong><br><strong>src&#x2F;index.js 是一个入口文件，我们可以直接修改 src&#x2F;index.js</strong><br>没有原理<br>以后补充</p>
+<img src="/2022/06/03/%E5%AE%89%E8%A3%85React/five" class="">
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -404,7 +485,7 @@ hexo d 来将文档部署到Github上
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-03 00:10:17" itemprop="dateModified" datetime="2022-06-03T00:10:17+08:00">2022-06-03</time>
+      <time title="修改时间：2022-06-03 21:38:48" itemprop="dateModified" datetime="2022-06-03T21:38:48+08:00">2022-06-03</time>
     </span>
 
   
@@ -417,7 +498,7 @@ hexo d 来将文档部署到Github上
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h1><p>命令安装插件hexo-renderer-marked<br>    npm install hexo-renderer-marked<br>不知道有什么用，安装就对了<br>hexo插入格式<br><strong></strong><br>就这样它不使用<strong>Markdown</strong>语法插入，反正什么语法能显示就用什么<br>对了把一个blog的图片都放在source&gt;_posts&gt;与blog图片相同的文件夹，<strong>图片名字不要有空格</strong></p>
+          <h1 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h1><p>命令安装插件hexo-renderer-marked<br>    npm install hexo-renderer-marked<br>不知道有什么用，安装就对了<br>hexo插入格式<br><strong></strong><br>就这样它不使用<strong>Markdown</strong>语法插入，反正什么语法能显示就用什么 webp格式也这样用<br>对了把一个blog的图片都放在source&gt;_posts&gt;与blog图片相同的文件夹，<strong>图片名字不要有空格</strong></p>
 <h1 id="关于hexo-error问题"><a href="#关于hexo-error问题" class="headerlink" title="关于hexo error问题"></a>关于hexo error问题</h1><p>如果你在网上用了多个解决方法没有解决问题，请备份blog重装hexo，毕竟重装快多了，也能解决除网络的大部分问题</p>
 <h1 id="关于hexo主题"><a href="#关于hexo主题" class="headerlink" title="关于hexo主题"></a>关于hexo主题</h1><p>如果是next主题 官方文档<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next.git">https://github.com/next-theme/hexo-theme-next.git</a><br>在命令行先输入<br>    npm install hexo-theme-next<br>再输入<br>    git clone <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a> themes&#x2F;next</p>
 <h1 id="编写blog用Markdown语言"><a href="#编写blog用Markdown语言" class="headerlink" title="编写blog用Markdown语言"></a>编写blog用Markdown语言</h1><p>美 &#x2F;ˈmɑːrkdaʊn&#x2F;n. 标低价，[物价] 减价<br>这是官方文档<a target="_blank" rel="noopener" href="https://markdown.com.cn/">https://markdown.com.cn/</a><br>它的后缀名是.md<br>边写边看很容易的</p>
