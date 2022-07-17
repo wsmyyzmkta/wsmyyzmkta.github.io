@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,6 +146,100 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="开星">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开星的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 开星的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-17 18:06:17 / 修改时间：18:02:12" itemprop="dateCreated datePublished" datetime="2022-07-17T18:06:17+08:00">2022-07-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="css-grid网格布局-横行竖列"><a href="#css-grid网格布局-横行竖列" class="headerlink" title="css grid网格布局 横行竖列"></a>css grid网格布局 横行竖列</h1><h3 id="在父元素声明grid布局"><a href="#在父元素声明grid布局" class="headerlink" title="在父元素声明grid布局"></a>在父元素声明grid布局</h3><p>在父元素声明grid的布局<br>    display：grid或者<br>    display：inline-grid<br>让其下的子元素成为网格项目</p>
+<h3 id="grid-template-columns-grid-template-rows-repeat"><a href="#grid-template-columns-grid-template-rows-repeat" class="headerlink" title="grid-template-columns grid-template-rows repeat()"></a>grid-template-columns grid-template-rows repeat()</h3><pre><code>grid-template-columns: 200px 200px 200px;
+</code></pre>
+<img src="/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/two.png" class="">
+<pre><code>grid-template-columns: 200px 200px 200px 200px 200px;
+</code></pre>
+<img src="/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/one.png" class="">
+<p>属性设置列的宽度 同时还是设置有多少列<br>    grid-template-rows: 100px 100px ;</p>
+<img src="/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/two.png" class="">
+<p>属性设置行的高度 同时还是设置有多少行<br><em><strong>repeat()</strong></em><br>repeat 重复 &#x2F;rəˈpēt&#x2F;<br>rapeat()接受两个参数<br><em><strong>第一个参数时rereap的次数</strong></em><br><em><strong>第二个时重复的值</strong></em><br>    grid-template-columns: 200px 200px 200px 200px 200px;<br>用repeat()函数：<br>    grid-template-columns:repeat(4,200px);<br>重复了4次，重复的值是200px；不0</p>
+<h3 id="auto-fill"><a href="#auto-fill" class="headerlink" title="auto-fill"></a>auto-fill</h3><pre><code>grid-template-columns:repeat(auto-fill ,200px);
+</code></pre>
+<p>自动填充，只要浏览器能够容纳得下，就可以放置元素，</p>
+<h3 id="grid-gap"><a href="#grid-gap" class="headerlink" title="grid-gap"></a>grid-gap</h3><pre><code>grid-gap：20px;
+</code></pre>
+<p>同时设置行列的间距<br>    grid-row-gap：20px;<br>设置row的间距<br>    grid-columns-gap：20px;<br>设置colunms的间距</p>
+<img src="/2022/07/17/css%20grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/two.png" class="">
+<h3 id="fr"><a href="#fr" class="headerlink" title="fr"></a>fr</h3><p>一个长度单位来帮助我们创建灵活的网格轨道<br>    grid-template-columns: 200px 1fr 2fr;<br>表示第一个列宽设置为 200px，200px那个元素后面剩余的宽度分为两部分，宽度分别为剩余宽度的 1&#x2F;3 和 2&#x2F;3</p>
+<h3 id="minmax"><a href="#minmax" class="headerlink" title="minmax()"></a>minmax()</h3><p>给网格元素一个最小和最大的尺寸,所以它接受两个参数，分别为最小值和最大值。<br>    grid-template-columns: 1fr 1fr minmax(300px, 2fr)<br>意思是，第三个列宽最少也是要 300px，但是最大不能大于第一第二列宽的两倍。</p>
+<h3 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h3><p>由浏览器决定长度。<br>    grid-template-columns: 200px auto 200px<br>表示第一第三列为 100px，中间由浏览器决定长度，</p>
+<h3 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a>grid-template-areas</h3><p>属性用于定义区域，一个区域由一个或者多个单元格组成<br>一般这个属性跟网格元素的 grid-area 一起使用，我们在这里一起介绍。 grid-area 属性指定项目放在哪一个区域</p>
+<h3 id="grid-auto-flow"><a href="#grid-auto-flow" class="headerlink" title="grid-auto-flow"></a>grid-auto-flow</h3><p>属性控制着自动布局算法怎样运作，精确指定在网格中被自动布局的元素怎样排列。默认的放置顺序是”先行后列”，即先填满第一行，再开始放入第二行，即下图英文数字的顺序 one,two,three…。这个顺序由 grid-auto-flow 属性决定，默认值是 row。<br>细心的同学可能发现了一个问题，就是第五个项目和第六个项目之间有个空白（如下图所示），这个是由于第六块的长度大于了空白处的长度，被挤到了下一行导致的。在实际应用中，我们可能想让下面长度合适的填满这个空白，这个时候可以设置 grid-auto-flow: row dense，表示尽可能填满表格。代码以及效果如下所示：</p>
+<h3 id="justify-items-属性、align-items-属性以及-place-items-属性"><a href="#justify-items-属性、align-items-属性以及-place-items-属性" class="headerlink" title="justify-items 属性、align-items 属性以及 place-items 属性"></a>justify-items 属性、align-items 属性以及 place-items 属性</h3><p>justify-items 属性设置单元格内容的水平位置（左中右），align-items 属性设置单元格的垂直位置（上中下）</p>
+<p>下面以 justify-items 属性为例进行讲解，align-items 属性同理，只是方向为垂直方向。<br>.container {<br>  justify-items: start | end | center | stretch;<br>  align-items: start | end | center | stretch;<br>}</p>
+<h3 id="justify-content-属性、align-content-属性以及-place-content-属性"><a href="#justify-content-属性、align-content-属性以及-place-content-属性" class="headerlink" title="justify-content 属性、align-content 属性以及 place-content 属性"></a>justify-content 属性、align-content 属性以及 place-content 属性</h3><p>这是属性作用于页面位置<br>start - 对齐容器的起始边框<br>end - 对齐容器的结束边框<br>center - 容器内部居中<br>space-around - 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍<br>space-between - 项目与项目的间隔相等，项目与容器边框之间没有间隔<br>space-evenly - 项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔<br>stretch - 项目大小没有指定时，拉伸占据整个网格容器</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
